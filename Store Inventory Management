@@ -1,0 +1,21 @@
+# Store inventory dictionary
+inventory = {
+    "apple": (0.5, 100),
+    "banana": (0.3, 150),
+    "orange": (0.7, 80)
+}
+
+def update_quantity(item_name, quantity_sold):
+    if item_name in inventory:
+        price, available_quantity = inventory[item_name]
+        if available_quantity >= quantity_sold:
+            inventory[item_name] = (price, available_quantity - quantity_sold)
+            print(f"Updated quantity of {item_name}. New quantity: {available_quantity - quantity_sold}.")
+        else:
+            print(f"Error: Not enough quantity available for {item_name}. Available: {available_quantity}.")
+    else:
+        print(f"Error: Item '{item_name}' does not exist in inventory.")
+
+# Example usage
+update_quantity("banana", 20)
+update_quantity("kiwi", 10)
