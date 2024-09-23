@@ -1,0 +1,17 @@
+# List to store student information
+students = []
+
+def add_student(student_id, name, grade):
+    # Check for duplicate student ID
+    for student in students:
+        if student['ID'] == student_id:
+            print("Student with this ID already exists.")
+            return
+    # Add new student if ID is unique
+    students.append({'ID': student_id, 'Name': name, 'Grade': grade})
+    print("Student added successfully.")
+
+# Example usage
+add_student(1, "Alice", 90)
+add_student(2, "Bob", 85)
+add_student(1, "Charlie", 88)  # This will show an error message

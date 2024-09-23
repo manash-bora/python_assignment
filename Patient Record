@@ -1,0 +1,18 @@
+# Patient records dictionary
+patients = {
+    1: {"name": "John Doe", "age": 30, "disease": "Flu"},
+    2: {"name": "Jane Smith", "age": 45, "disease": "Cold"},
+    3: {"name": "Alice Jones", "age": 25, "disease": "Headache"}
+}
+
+def get_patient_details(patient_id):
+    if patient_id in patients:
+        patient = patients[patient_id]
+        return (patient["name"], patient["age"], patient["disease"])
+    else:
+        print(f"Error: Patient ID '{patient_id}' does not exist.")
+        return None
+
+# Example usage
+patient_info = get_patient_details(1)
+print(patient_info)
